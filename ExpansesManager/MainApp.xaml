@@ -19,7 +19,6 @@
             <ColumnDefinition Width="*"></ColumnDefinition>
             <ColumnDefinition Width="Auto"></ColumnDefinition>
         </Grid.ColumnDefinitions>
-        <TextBlock x:Name="textBox" Grid.Row="0" Grid.Column="2"  TextWrapping="Wrap" />
 
         <StackPanel Orientation="Vertical" Grid.Row="1" Grid.Column="0">
             <Label Content="Groups: " />
