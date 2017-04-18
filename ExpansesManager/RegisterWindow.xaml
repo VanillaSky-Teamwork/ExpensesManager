@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ExpansesManager"
         mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
         Title="RegisterWindow" Height="350" Width="525">
     <Grid>
         <TextBox x:Name="UsernameTextBox" HorizontalAlignment="Left" Height="23" Margin="157,78,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="225" />
