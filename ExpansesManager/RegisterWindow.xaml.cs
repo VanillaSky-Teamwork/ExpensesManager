@@ -17,54 +17,71 @@ using System.Windows.Shapes;
 
 namespace ExpansesManager
 {
-	/// <summary>
-	/// Interaction logic for RegisterWindow.xaml
-	/// </summary>
-	public partial class RegisterWindow : Window
-	{
-		public RegisterWindow()
-		{
-			InitializeComponent();
-		}
+    /// <summary>
+    /// Interaction logic for RegisterWindow.xaml
+    /// </summary>
+    public partial class RegisterWindow : Window
+    {
+        public RegisterWindow()
+        {
+            InitializeComponent();
+        }
 
 
 
-		private void BackButton_Click(object sender, RoutedEventArgs e)
-		{
-			MainWindow main = new MainWindow();
-			this.Close();
-			main.ShowDialog();
-		}
+        private void BackButton_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow main = new MainWindow();
+            this.Close();
+            main.ShowDialog();
+        }
 
-		private void RegisterButton_Click(object sender, RoutedEventArgs e)
-		{
-			if (PasswordBox.Password == RepeatPasswordBox.Password)
-			{
-				using (var context = new ExpansesManagerContext())
-				{
+        private void RegisterButton_Click(object sender, RoutedEventArgs e)
+        {
+            if(Checks.UsernameIsTaken(UsernameTextBox.Text))
+            {
+                ErrorLabel.Content = Checks.UsernameIsAlreadyTaken;
+                return;
+            }
 
-					User user = new User()
-					{
-						Username = UsernameTextBox.Text,
-						Password = PasswordBox.Password,
-						Email = EmailtextBox.Text,
-						DateRegistered = DateTime.UtcNow,
-					};
+            if (PasswordBox.Password != RepeatPasswordBox.Password)
+            {
+                ErrorLabel.Content = Checks.PasswordsDoNotMatch;
+                return;
+            }
 
-					context.Users.Add(user);
-					context.SaveChanges();
-				}
+            if(!Checks.PasswordIsValid(PasswordBox.Password))
+            {
+                ErrorLabel.Content = Checks.PasswordIsInvalid;
+                return;
+            }
 
-				UsernameTextBox.Clear();
-				PasswordBox.Clear();
-				RepeatPasswordBox.Clear();
-				EmailtextBox.Clear();
-				ErrorLabel.Content = "Successfully registered!";
-			}
-			else
-			{
-				ErrorLabel.Content = Checks.PasswordsDoNotMatch;
-			}
-		}
-	}
+            if (Checks.EmailIsValid(EmailtextBox.Text))
+            {
+                ErrorLabel.Content = Checks.EmailIsNotValid;
+                return;
+            }
+
+            using (var context = new ExpansesManagerContext())
+            {
+
+                User user = new User()
+                {
+                    Username = UsernameTextBox.Text,
+                    Password = PasswordBox.Password,
+                    Email = EmailtextBox.Text,
+                    DateRegistered = DateTime.UtcNow,
+                };
+
+                context.Users.Add(user);
+                context.SaveChanges();
+            }
+
+            UsernameTextBox.Clear();
+            PasswordBox.Clear();
+            RepeatPasswordBox.Clear();
+            EmailtextBox.Clear();
+            ErrorLabel.Content = "Successfully registered!";
+        }
+    }
 }

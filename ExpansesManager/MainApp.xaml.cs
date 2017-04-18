@@ -28,5 +28,15 @@ namespace ExpansesManager
 
 
 		}
-	}
+
+        private void textBox1_TextChanged(object sender, System.Windows.Controls.TextChangedEventArgs e)
+        {
+
+        }
+
+        private void button_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Hello!");
+        }
+    }
 }

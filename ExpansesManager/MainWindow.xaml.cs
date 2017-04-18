@@ -1,4 +1,5 @@
 ﻿using Data;
+using ExpansesManager.Core;
 using System.Linq;
 using System.Net;
 using System.Windows;
@@ -33,7 +34,7 @@ namespace ExpansesManager
 				}
 				else
 				{
-					MessageBox.Show("Wrong password or username. Try again.");
+					ErrorLabel.Content = ("Username or password is invalid.");
 					return;
 				}
 

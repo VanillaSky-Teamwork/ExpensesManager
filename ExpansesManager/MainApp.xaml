@@ -9,7 +9,8 @@
 " Width="600">
     <Grid>
         <TextBlock x:Name="textBox" HorizontalAlignment="Left" Height="15" Margin="420,10,0,0" TextWrapping="Wrap" Text=""   VerticalAlignment="Top" Width="162"/>
-        
+        <PasswordBox x:Name="passwordBox" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+
 
 
         <!--        <Button x:Name="CreateGroup" Content="Add Group" HorizontalAlignment="Left" Margin="27,32,0,0" VerticalAlignment="Top" Width="75"/>-->

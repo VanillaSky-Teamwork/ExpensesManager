@@ -13,6 +13,7 @@
         <Label x:Name="label1" Content="Password:" HorizontalAlignment="Left" Margin="81,155,0,0" VerticalAlignment="Top" Width="67" RenderTransformOrigin="0.473,0.066"/>
         <Button x:Name="button" Content="Register" HorizontalAlignment="Left" Margin="28,274,0,0" VerticalAlignment="Top" Width="75" Click="RegisterButton_Click"/>
         <PasswordBox x:Name="PasswordBox" PasswordChar="*" HorizontalAlignment="Left" Margin="153,155,0,0" VerticalAlignment="Top" Width="204" Height="26"/>
+        <Label x:Name="ErrorLabel" Content="" HorizontalAlignment="Left" Margin="144,81,0,0" VerticalAlignment="Top" Height="35" Width="289"/>
 
     </Grid>
 </Window>
