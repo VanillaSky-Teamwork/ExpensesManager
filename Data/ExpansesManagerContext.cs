@@ -17,5 +17,7 @@ namespace Data
         public virtual DbSet<Group> Groups { get; set; }
         public virtual DbSet<SubGroup> SubGroups { get; set; }
         public virtual DbSet<Element> Elements { get; set; }
+
+
     }
 }

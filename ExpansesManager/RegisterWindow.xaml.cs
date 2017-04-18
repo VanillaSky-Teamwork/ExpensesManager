@@ -1,4 +1,5 @@
 ﻿using Data;
+using Data.Errors;
 using Models.Models;
 using System;
 using System.Collections.Generic;
@@ -16,43 +17,54 @@ using System.Windows.Shapes;
 
 namespace ExpansesManager
 {
-    /// <summary>
-    /// Interaction logic for RegisterWindow.xaml
-    /// </summary>
-    public partial class RegisterWindow : Window
-    {
-        public RegisterWindow()
-        {
-            InitializeComponent();
-        }
+	/// <summary>
+	/// Interaction logic for RegisterWindow.xaml
+	/// </summary>
+	public partial class RegisterWindow : Window
+	{
+		public RegisterWindow()
+		{
+			InitializeComponent();
+		}
 
 
 
-        private void BackButton_Click(object sender, RoutedEventArgs e)
-        {
-            MainWindow main = new MainWindow();
-            this.Close();
-            main.ShowDialog();
-        }
+		private void BackButton_Click(object sender, RoutedEventArgs e)
+		{
+			MainWindow main = new MainWindow();
+			this.Close();
+			main.ShowDialog();
+		}
 
-        private void RegisterButton_Click(object sender, RoutedEventArgs e)
-        {
-            using (var context = new ExpansesManagerContext())
-            {
-                if(PasswordTextBox.Text == RepeatedPasswordTextBox.Text)
-                {
-                    User user = new User()
-                    {
-                        Username = UsernameTextBox.Text,
-                        Password = PasswordTextBox.Text,
-                        Email = EmailtextBox.Text,
-                    };
+		private void RegisterButton_Click(object sender, RoutedEventArgs e)
+		{
+			if (PasswordBox.Password == RepeatPasswordBox.Password)
+			{
+				using (var context = new ExpansesManagerContext())
+				{
 
-                    context.Users.Add(user);
-                    context.SaveChanges();
-                    MessageBox.Show("Successfully registered!");
-                }
-            }
-        }
-    }
+					User user = new User()
+					{
+						Username = UsernameTextBox.Text,
+						Password = PasswordBox.Password,
+						Email = EmailtextBox.Text,
+						DateRegistered = DateTime.UtcNow,
+					};
+
+					context.Users.Add(user);
+					context.SaveChanges();
+				}
+
+				UsernameTextBox.Clear();
+				PasswordBox.Clear();
+				RepeatPasswordBox.Clear();
+				EmailtextBox.Clear();
+				ErrorLabel.Content = "Successfully registered!";
+			}
+			else
+			{
+				ErrorLabel.Content = Checks.PasswordsDoNotMatch;
+			}
+		}
+	}
 }

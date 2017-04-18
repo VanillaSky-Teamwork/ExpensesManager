@@ -1,42 +1,58 @@
 ﻿using Data;
-using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Net;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+using AuthenticationManager = ExpansesManager.Core.AuthenticationManager;
 
 namespace ExpansesManager
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
-    public partial class MainWindow : Window
-    {
-        public MainWindow()
-        {
-            InitializeComponent();
-            Utility.InitializeDB();
-        }
+	/// <summary>
+	/// Interaction logic for MainWindow.xaml
+	/// </summary>
+	public partial class MainWindow : Window
+	{
+		
 
-        private void LoginButton_Click(object sender, RoutedEventArgs e)
-        {
+		public MainWindow()
+		{
+			InitializeComponent();
+			Utility.InitializeDB();
+		}
 
-        }
+		private void LoginButton_Click(object sender, RoutedEventArgs e)
+		{
+			
 
-        private void RegisterButton_Click(object sender, RoutedEventArgs e)
-        {
-            RegisterWindow register = new RegisterWindow();
-            App.Current.MainWindow.Close();
-            register.ShowDialog();
-        }
-    }
+			using (var context = new ExpansesManagerContext())
+			{
+				if (context.Users.Any(u => u.Username == UsernameTextBox.Text && u.Password == PasswordBox.Password))
+				{
+					MessageBox.Show("Successfully logged in!");
+					
+				}
+				else
+				{
+					MessageBox.Show("Wrong password or username. Try again.");
+					return;
+				}
+
+				AuthenticationManager.Login(UsernameTextBox.Text, PasswordBox.Password);
+				
+				UsernameTextBox.Clear();
+				PasswordBox.Clear();
+			}
+
+			MainApp mainApp = new MainApp();
+			App.Current.MainWindow.Close();
+			mainApp.ShowDialog();
+		}
+
+		private void RegisterButton_Click(object sender, RoutedEventArgs e)
+		{
+			RegisterWindow register = new RegisterWindow();
+			App.Current.MainWindow.Close();
+			register.ShowDialog();
+		}
+	}
 }

@@ -15,7 +15,8 @@
         <Label x:Name="label2" Content="Repeat Password:" HorizontalAlignment="Left" Margin="47,163,0,0" VerticalAlignment="Top" Width="104"/>
         <TextBox x:Name="EmailtextBox" HorizontalAlignment="Left" Height="23" Margin="156,107,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="225" RenderTransformOrigin="-1.002,-1.391"/>
         <Label x:Name="label3" Content="Email:" HorizontalAlignment="Left" Margin="99,109,0,0" VerticalAlignment="Top" Width="52"/>
-        <PasswordBox x:Name="passwordBox" HorizontalAlignment="Left" Margin="157,135,0,0" VerticalAlignment="Top" Width="225" Height="23"/>
-        <PasswordBox x:Name="passwordBox1" HorizontalAlignment="Left" Margin="156,163,0,0" VerticalAlignment="Top" Width="226" Height="23"/>
+        <PasswordBox x:Name="PasswordBox" HorizontalAlignment="Left" Margin="157,135,0,0" VerticalAlignment="Top" Width="225" Height="23"/>
+        <PasswordBox x:Name="RepeatPasswordBox" HorizontalAlignment="Left" Margin="156,163,0,0" VerticalAlignment="Top" Width="226" Height="23"/>
+        <Label x:Name="ErrorLabel" Content="" HorizontalAlignment="Left" Margin="156,47,0,0" VerticalAlignment="Top" Width="225"/>
     </Grid>
 </Window>
