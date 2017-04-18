@@ -26,9 +26,9 @@ namespace ExpansesManager
 			{
 				var user = contex.Users.Find(currentUser.Id);
 				vm.Groups = new ObservableCollection<GroupViewModel>(Mapper.Instance.Map<IEnumerable<Group>, ObservableCollection<GroupViewModel>>(user.Groups));
-				//this.GroupsGrid.ItemsSource = vm.Groups;
+				this.GroupsGrid.ItemsSource = vm.Groups;
 			}
-			//this.GroupsGrid.RowEditEnding += OnRowEditEnding;
+			this.GroupsGrid.RowEditEnding += OnRowEditEnding;
 		}
 
 		private void OnRowEditEnding(object sender, DataGridRowEditEndingEventArgs e)
