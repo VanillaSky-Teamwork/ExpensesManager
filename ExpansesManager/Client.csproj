@@ -72,7 +72,7 @@
     <Compile Include="MainApp.xaml.cs">
       <DependentUpon>MainApp.xaml</DependentUpon>
     </Compile>
-    <Compile Include="MainAppViewModel.cs" />
+    <Compile Include="ViewModels\MainAppViewModel.cs" />
     <Compile Include="Properties\Annotations.cs" />
     <Compile Include="RegisterWindow.xaml.cs">
       <DependentUpon>RegisterWindow.xaml</DependentUpon>
