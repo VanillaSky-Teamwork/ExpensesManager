@@ -13,8 +13,6 @@ namespace ExpansesManager
 	/// </summary>
 	public partial class MainWindow : Window
 	{
-		
-
 		public MainWindow()
 		{
 			InitializeComponent();
@@ -23,8 +21,6 @@ namespace ExpansesManager
 
 		private void LoginButton_Click(object sender, RoutedEventArgs e)
 		{
-			
-
 			using (var context = new ExpansesManagerContext())
 			{
 				if (context.Users.Any(u => u.Username == UsernameTextBox.Text && u.Password == PasswordBox.Password))

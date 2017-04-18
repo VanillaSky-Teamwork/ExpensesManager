@@ -69,9 +69,6 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Core\AuthenticationManager.cs" />
-    <Compile Include="InterfaceWindow.xaml.cs">
-      <DependentUpon>InterfaceWindow.xaml</DependentUpon>
-    </Compile>
     <Compile Include="MainApp.xaml.cs">
       <DependentUpon>MainApp.xaml</DependentUpon>
     </Compile>
@@ -83,10 +80,6 @@
     <Compile Include="ViewModels\ElementViewModel.cs" />
     <Compile Include="ViewModels\GroupViewModel.cs" />
     <Compile Include="ViewModels\SubGroupViewModel.cs" />
-    <Page Include="InterfaceWindow.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="MainApp.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
