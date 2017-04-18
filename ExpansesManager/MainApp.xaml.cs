@@ -81,5 +81,35 @@ namespace ExpansesManager
             this.Close();
             main.ShowDialog();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            //using (var context = new ExpansesManagerContext())
+            //{
+            //    Group newGroups = new Group();
+
+
+            //TreeViewItem newGroup = new TreeViewItem();
+            //newGroup.Header = textBox1.Text;
+            //h.Items.Add(newGroup);
+            //context.Groups.Add(newGroup);
+            var Button1 = new Button();
+
+            using (var context = new ExpansesManagerContext())
+            {
+                Group group = new Group();
+                group.Name = textBox1.Text;
+                User currentUser = AuthenticationManager.GetCurrentUser();
+                var user = context.Users.Find(currentUser.Id);
+                group.UserId = currentUser.Id;
+                context.Groups.Add(group);
+                context.SaveChanges();
+            }
+                TreeViewItem newGroup = new TreeViewItem();
+                newGroup.Header = textBox1.Text;
+                h.Items.Add(newGroup);
+
+           
+        }
     }
 }

@@ -8,68 +8,33 @@
         WindowStartupLocation="CenterScreen"
         Width="600">
     <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="25"></RowDefinition>
-            <RowDefinition Height="*"></RowDefinition>
-        </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"></ColumnDefinition>
-            <ColumnDefinition Width="*"></ColumnDefinition>
-            <ColumnDefinition Width="Auto"></ColumnDefinition>
-        </Grid.ColumnDefinitions>
-
-        <StackPanel Orientation="Vertical" Grid.Row="1" Grid.Column="0">
+        <StackPanel Orientation="Vertical" Grid.Column="0" Margin="0,5,0,-5">
             <Label Content="Groups: " />
-            <DataGrid x:Name="GroupsGrid"
-                      AutoGenerateColumns="False"
-                      SelectionUnit="FullRow"
-                      CanUserAddRows="True"
-                      SelectedIndex="0"
-                      CanUserDeleteRows="True">
-                <DataGrid.Columns>
-                    <DataGridCheckBoxColumn Header="Is Active" Binding="{Binding Path=IsActive, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"></DataGridCheckBoxColumn>
-                    <DataGridTextColumn Header="Group Name" Width="*" Binding="{Binding Path=Name, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"></DataGridTextColumn>
-                </DataGrid.Columns>
-            </DataGrid>
+            <TextBox Height="23" HorizontalAlignment="Left" Margin="8,14,0,0"
+                 Name="textBox1" VerticalAlignment="Top" Width="127" />
+            <Button Height="23" Margin="140,14,0,0" Name="button1" VerticalAlignment="Top"
+                HorizontalAlignment="Left" Width="76" Click="button1_Click">
+                Add Item
+            </Button>
+            <TreeView Margin="10,10,0,13" Name="TreeView1" HorizontalAlignment="Left"
+ VerticalAlignment="Top" Width="450" Height="200">
+                <TreeViewItem Header="Groups" Name="h">
+                    <TreeViewItem Header="Coke"></TreeViewItem>
+                    <TreeViewItem Header="Pepsi"></TreeViewItem>
+                    <TreeViewItem Header="Orange Juice"></TreeViewItem>
+                    <TreeViewItem Header="Milk"></TreeViewItem>
+                    <TreeViewItem Header="Iced Tea"></TreeViewItem>
+                    <TreeViewItem Header="Mango Shake"></TreeViewItem>
+                </TreeViewItem>
+            </TreeView>
+
+
+
+
+
+
+
         </StackPanel>
-        <Grid Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2">
-            <Grid.RowDefinitions>
-                <RowDefinition></RowDefinition>
-                <RowDefinition></RowDefinition>
-            </Grid.RowDefinitions>
-            <StackPanel Orientation="Vertical" Grid.Row="0">
-                <Label Content="Sub Groups: " />
-                <DataGrid x:Name="SubGroupsGrid"
-                          DataContext="{Binding GroupsGrid.SelectedItem}"
-                          ItemsSource="{Binding Path=SubGroups}"
-                      AutoGenerateColumns="False"
-                      SelectionUnit="FullRow"
-                      CanUserAddRows="True"
-                      SelectedIndex="0"
-                      CanUserDeleteRows="True">
-                    <DataGrid.Columns>
-                        <DataGridCheckBoxColumn Header="Is Active" Binding="{Binding Path=IsActive, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"></DataGridCheckBoxColumn>
-                        <DataGridTextColumn Header="Group Name" Binding="{Binding Path=Name, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"></DataGridTextColumn>
-                    </DataGrid.Columns>
-                </DataGrid>
-            </StackPanel>
-            <StackPanel Orientation="Vertical" Grid.Row="1">
-                <Label Content="Elements: " />
-                <DataGrid x:Name="ElementsGrid"
-                          DataContext="{Binding SubGroupsGrid.SelectedItem}"
-                          ItemsSource="{Binding Path=Elemetns}"
-                      AutoGenerateColumns="True"
-                      SelectionUnit="FullRow"
-                      CanUserAddRows="True"
-                      SelectedIndex="0"
-                      CanUserDeleteRows="True">
-                    <!--<DataGrid.Columns>
-                        <DataGridCheckBoxColumn Header="Is Active" Binding="{Binding Path=IsActive, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"></DataGridCheckBoxColumn>
-                        <DataGridTextColumn Header="Group Name" Binding="{Binding Path=Name, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"></DataGridTextColumn>
-                    </DataGrid.Columns>-->
-                </DataGrid>
-            </StackPanel>
-        </Grid>
-        <Button x:Name="LogoutButton" Content="Logout" Grid.Column="1" HorizontalAlignment="Left" Margin="212.2,10,0,0" VerticalAlignment="Top" Width="75" Grid.RowSpan="2" Click="LogoutButton_Click"/>
+        <Button x:Name="LogoutButton" Content="Logout" HorizontalAlignment="Left" Margin="463,3,0,0" VerticalAlignment="Top" Width="99" Click="LogoutButton_Click" Height="25"/>
     </Grid>
 </Window>

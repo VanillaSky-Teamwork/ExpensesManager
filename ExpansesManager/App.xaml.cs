@@ -17,6 +17,7 @@ namespace ExpansesManager
     public partial class App : Application
     {
         public App()
+
         {
             this.AutoMapperConfigurations();
         }

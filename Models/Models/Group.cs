@@ -23,6 +23,12 @@ namespace Models.Models
 
         public bool IsActive { get; set; }
 
+        public int UserId { get; set; }
         public virtual ICollection<SubGroup> SubGroups { get; set; }
+
+
+
+
+
     }
 }
