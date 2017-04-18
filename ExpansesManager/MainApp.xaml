@@ -3,21 +3,81 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:ExpansesManager"
         mc:Ignorable="d"
-        Title="MainApp" Height="400
-" Width="600">
+        Title="MainApp" Height="400"
+        WindowStartupLocation="CenterScreen"
+        Width="600">
     <Grid>
         <TextBlock x:Name="textBox" HorizontalAlignment="Left" Height="15" Margin="420,10,0,0" TextWrapping="Wrap" Text=""   VerticalAlignment="Top" Width="162"/>
         <PasswordBox x:Name="passwordBox" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="25"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="Auto"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <TextBlock x:Name="textBox" Grid.Row="0" Grid.Column="2"  TextWrapping="Wrap" />
 
-
+        <StackPanel Orientation="Vertical" Grid.Row="1" Grid.Column="0">
+            <Label Content="Groups: " />
+            <DataGrid x:Name="GroupsGrid" 
+                      AutoGenerateColumns="False"
+                      SelectionUnit="FullRow"
+                      CanUserAddRows="True"
+                      SelectedIndex="0"
+                      CanUserDeleteRows="True">
+                <DataGrid.Columns>
+                    <DataGridCheckBoxColumn Header="Is Active" Binding="{Binding Path=IsActive, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"></DataGridCheckBoxColumn>
+                    <DataGridTextColumn Header="Group Name" Width="*" Binding="{Binding Path=Name, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"></DataGridTextColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+        </StackPanel>
+        <Grid Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2">
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            <StackPanel Orientation="Vertical" Grid.Row="0">
+                <Label Content="Sub Groups: " />
+                <DataGrid x:Name="SubGroupsGrid" 
+                          DataContext="{Binding GroupsGrid.SelectedItem}"
+                          ItemsSource="{Binding Path=SubGroups}"
+                      AutoGenerateColumns="False"
+                      SelectionUnit="FullRow"
+                      CanUserAddRows="True"
+                      SelectedIndex="0"
+                      CanUserDeleteRows="True">
+                    <DataGrid.Columns>
+                        <DataGridCheckBoxColumn Header="Is Active" Binding="{Binding Path=IsActive, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"></DataGridCheckBoxColumn>
+                        <DataGridTextColumn Header="Group Name" Binding="{Binding Path=Name, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"></DataGridTextColumn>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </StackPanel>
+            <StackPanel Orientation="Vertical" Grid.Row="1">
+                <Label Content="Elements: " />
+                <DataGrid x:Name="ElementsGrid" 
+                          DataContext="{Binding SubGroupsGrid.SelectedItem}"
+                          ItemsSource="{Binding Path=Elemetns}"
+                      AutoGenerateColumns="True"
+                      SelectionUnit="FullRow"
+                      CanUserAddRows="True"
+                      SelectedIndex="0"
+                      CanUserDeleteRows="True">
+                    <!--<DataGrid.Columns>
+                        <DataGridCheckBoxColumn Header="Is Active" Binding="{Binding Path=IsActive, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"></DataGridCheckBoxColumn>
+                        <DataGridTextColumn Header="Group Name" Binding="{Binding Path=Name, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"></DataGridTextColumn>
+                    </DataGrid.Columns>-->
+                </DataGrid>
+            </StackPanel>
+        </Grid>
 
         <!--        <Button x:Name="CreateGroup" Content="Add Group" HorizontalAlignment="Left" Margin="27,32,0,0" VerticalAlignment="Top" Width="75"/>-->
         <!--        <Button x:Name="CreateSubGroup" Content="Add Sub-Gr." HorizontalAlignment="Left" Margin="27,88,0,0" VerticalAlignment="Top" Width="75"/>-->
         <!--        <ComboBox x:Name="comboBox" HorizontalAlignment="Left" Margin="126,88,0,0" VerticalAlignment="Top" Width="284"/>-->
         <!--        <TextBox x:Name="textBlock" HorizontalAlignment="Left" Margin="126,32,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="284" Height="23"/>-->
         <!--        <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="23" Margin="126,118,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="284"/>-->
-
     </Grid>
 </Window>
