@@ -11,8 +11,8 @@ namespace ExpansesManager.ViewModels
             this.IsActive = true;
             this.SubGroups = new ObservableCollection<SubGroupViewModel>();
         }
-        private string id;
-        public string Id
+        private int id;
+        public int Id
         {
             get { return id; }
             set
