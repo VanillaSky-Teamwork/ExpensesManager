@@ -131,5 +131,12 @@ namespace ExpansesManager
             this.Close();
             edit.ShowDialog(); 
         }
+       
+            private void ExportGroup_Clik(object sender, RoutedEventArgs e)
+        {
+            ExportGroupToJson ex = new ExportGroupToJson();
+            this.Close();
+            ex.ShowDialog();
+        }
     }
 }

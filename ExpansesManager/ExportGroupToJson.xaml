@@ -12,7 +12,7 @@
                   HorizontalAlignment="Center" Margin="85,60,87,0" VerticalAlignment="Top" Width="120" SelectedIndex="0"/>
         <Label x:Name="label" Content="Select group to export" HorizontalAlignment="Center" Margin="75,10,87,0" VerticalAlignment="Top" RenderTransformOrigin="0.574,0.615" Width="130"/>
         <Button x:Name="button" Content="Export" HorizontalAlignment="Center" Margin="110,125,107,0" VerticalAlignment="Top" Width="75" Click="button_Click"/>
-        <Button x:Name="button1" Content="Cancel" HorizontalAlignment="Center" Margin="110,170,107,0" VerticalAlignment="Top" Width="75"/>
+        <Button x:Name="button1" Content="Cancel" HorizontalAlignment="Center" Margin="110,170,107,0" VerticalAlignment="Top" Width="75" Click="Cancel_Click"/>
 
     </Grid>
 </Window>
