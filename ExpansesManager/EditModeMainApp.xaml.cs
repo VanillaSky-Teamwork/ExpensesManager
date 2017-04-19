@@ -106,5 +106,12 @@ namespace ExpansesManager
             }
             this.GroupsGrid.UpdateLayout();
         }
+
+        private void BackButton_Click(object sender, RoutedEventArgs e)
+        {
+            MainApp mainApp = new MainApp();
+            this.Close();
+            mainApp.ShowDialog();
+        }
     }
 }

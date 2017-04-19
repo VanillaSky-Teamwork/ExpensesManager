@@ -80,10 +80,11 @@
                         <DataGridTextColumn Header="Price" Binding="{Binding Path=Price, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"></DataGridTextColumn>
                         <!--<DataGridTextColumn Header="Date Bought" Width="*" Binding="{Binding Path=DateBought, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"></DataGridTextColumn>-->
                         <DataGridTemplateColumn Header="Date Bought" Width="*" CellTemplate="{StaticResource DateTemplate}" CellEditingTemplate="{StaticResource EditingDateTemplate}"></DataGridTemplateColumn>
-                        </DataGrid.Columns>
+                    </DataGrid.Columns>
                 </DataGrid>
             </StackPanel>
         </Grid>
-        <Button Grid.Row="2" Grid.ColumnSpan="3" Click="ButtonSaveChanges_OnClick">Save Changes</Button>
+        <Button Grid.Row="2" Click="ButtonSaveChanges_OnClick" Margin="135,0.4,9.8,0.4">Save Changes</Button>
+        <Button x:Name="BackButton" Content="Back" HorizontalAlignment="Left" Margin="50,2.4,0,0" Grid.Row="2" VerticalAlignment="Top" Width="75" Click="BackButton_Click"/>
     </Grid>
 </Window>
