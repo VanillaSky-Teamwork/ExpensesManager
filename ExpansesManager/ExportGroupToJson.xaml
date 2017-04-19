@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:ExpansesManager"
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
-        Title="Export Json" Height="400" Width="600">
+        Title="Export Json"  Height="350" Width="525">
     <Grid>
         <ComboBox x:Name="comboBox"  DisplayMemberPath="Name" SelectedValuePath="Name" SelectedValue="{Binding Path=Group}" 
                   HorizontalAlignment="Center" Margin="85,60,87,0" VerticalAlignment="Top" Width="120" SelectedIndex="0"/>
