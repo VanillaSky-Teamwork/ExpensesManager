@@ -78,6 +78,7 @@
     <Compile Include="Core\AuthenticationManager.cs" />
     <Compile Include="EditModeMainApp.xaml.cs">
       <DependentUpon>EditModeMainApp.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ExportGroupToJson.xaml.cs">
       <DependentUpon>ExportGroupToJson.xaml</DependentUpon>
     </Compile>
