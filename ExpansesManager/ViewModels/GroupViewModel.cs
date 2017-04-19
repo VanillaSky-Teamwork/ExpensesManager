@@ -1,12 +1,18 @@
-﻿using System.Collections.ObjectModel;
+﻿using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.Data.Entity.Core.Objects.DataClasses;
+using System.Linq;
+using Data;
 using Models.Models;
 
 namespace ExpansesManager.ViewModels
 {
     public class GroupViewModel : INotifyPropertyChanged
     {
-        public GroupViewModel()
+		private ExpansesManagerContext _context = new ExpansesManagerContext();
+
+		public GroupViewModel()
         {
             this.IsActive = true;
             this.SubGroups = new ObservableCollection<SubGroupViewModel>();
@@ -54,9 +60,17 @@ namespace ExpansesManager.ViewModels
                 }
             }
         }
-        
 
-        public ObservableCollection<SubGroupViewModel> SubGroups { get; set; }
+
+	    public List<Group> GetGroupsList()
+	    {
+			
+			return (from gr in _context.Groups select gr).ToList();
+	    }
+
+
+
+	    public ObservableCollection<SubGroupViewModel> SubGroups { get; set; }
 
         public event PropertyChangedEventHandler PropertyChanged;
         protected virtual void OnPropertyChanged(string propertyName)
@@ -67,4 +81,5 @@ namespace ExpansesManager.ViewModels
             }
         }
     }
+	
 }
