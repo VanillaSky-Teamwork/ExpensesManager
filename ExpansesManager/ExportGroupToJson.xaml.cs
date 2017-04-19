@@ -1,17 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
+﻿using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 using Data;
 using ExpansesManager.Core;
 using Models.Models;
@@ -94,9 +83,9 @@ namespace ExpansesManager
 
 		private void Cancel_Click(object sender, RoutedEventArgs e)
 		{
-			MainApp mApp = new MainApp();
+		
 			this.Close();
-			mApp.ShowDialog();
+			
 		}
 	}
 }

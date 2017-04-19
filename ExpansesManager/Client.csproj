@@ -82,6 +82,9 @@
     <Compile Include="ExportGroupToJson.xaml.cs">
       <DependentUpon>ExportGroupToJson.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ImportGroupFromJson.xaml.cs">
+      <DependentUpon>ImportGroupFromJson.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MainApp.xaml.cs">
       <DependentUpon>MainApp.xaml</DependentUpon>
     </Compile>
@@ -99,7 +102,6 @@
     <Compile Include="ViewModels\ElementViewModel.cs" />
     <Compile Include="ViewModels\GroupViewModel.cs" />
     <Compile Include="ViewModels\SubGroupViewModel.cs" />
-
     <Page Include="EditModeMainApp.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -111,6 +113,10 @@
     <Page Include="ExportGroupToJson.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ImportGroupFromJson.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="MainApp.xaml">
       <SubType>Designer</SubType>
