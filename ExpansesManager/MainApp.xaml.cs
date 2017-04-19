@@ -90,8 +90,27 @@ namespace ExpansesManager
             }
         }
 
+        private void EditButton1_Click(object sender, RoutedEventArgs e)
+        {
+            EditModeMainApp edit = new EditModeMainApp();
+            this.Close();
+            edit.ShowDialog(); 
+        }
+        private void Statisyic_Clik(object sender, RoutedEventArgs e)
+        {
+            MainGroups edit = new MainGroups();
+            this.Close();
+            edit.ShowDialog(); 
+        }
+       
+            private void ExportGroup_Clik(object sender, RoutedEventArgs e)
+        {
+            ExportGroupToJson ex = new ExportGroupToJson();
+            this.Close();
+            ex.ShowDialog();
+        }
 
-        private void AddSubGroupButton_Click(object sender, RoutedEventArgs e)
+        private void AddSubGroupButton_Click_1(object sender, RoutedEventArgs e)
         {
             using (var context = new ExpansesManagerContext())
             {
@@ -117,26 +136,6 @@ namespace ExpansesManager
                 group.Items.Add(newSubGroup);
 
             }
-        }
-
-        private void EditButton1_Click(object sender, RoutedEventArgs e)
-        {
-            EditModeMainApp edit = new EditModeMainApp();
-            this.Close();
-            edit.ShowDialog(); 
-        }
-        private void Statisyic_Clik(object sender, RoutedEventArgs e)
-        {
-            MainGroups edit = new MainGroups();
-            this.Close();
-            edit.ShowDialog(); 
-        }
-       
-            private void ExportGroup_Clik(object sender, RoutedEventArgs e)
-        {
-            ExportGroupToJson ex = new ExportGroupToJson();
-            this.Close();
-            ex.ShowDialog();
         }
     }
 }

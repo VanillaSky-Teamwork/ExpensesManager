@@ -22,25 +22,22 @@
 
         <TreeView Margin="10,82,0,0" Name="TreeView1" HorizontalAlignment="Left" VerticalAlignment="Top" Width="349" Height="219" RenderTransformOrigin="0.498,1.045" Grid.Row="1">
             <TreeViewItem Header="Groups" x:Name="TreeViewGroups">
-                
+
             </TreeViewItem>
         </TreeView>
-       
-        <Grid/>
-        <Calendar Margin="397,178,18,15" Grid.Row="1" Background="#FF7FFFD4">
-            <!--<Calendar.Background>
-                <ImageBrush ImageSource="Green.jpg" Opacity="0.3"/>
-            </Calendar.Background>-->
-        </Calendar>
 
-        <Button x:Name="EditButton" Content="Edit" Margin="396,33,18,286" RenderTransformOrigin="1.32,3.85" Click="EditButton1_Click" Background="#FF7FFFD4" BorderBrush="Black" BorderThickness="1" Grid.Row="1"/>
+        <Grid/>
+
+        <Button x:Name="EditButton" Content="Edit Password" Margin="396,33,18,286" RenderTransformOrigin="1.32,3.85" Click="EditButton1_Click" Background="#FF7FFFD4" BorderBrush="Black" BorderThickness="1" Grid.Row="1"/>
         <Button x:Name="Statistic" Content="Statistic" Margin="396,63,18,256" Click="Statisyic_Clik" Background="#FF98FB98" BorderBrush="Black" BorderThickness="1" Grid.Row="1"/>
-        <Button x:Name="Export" Content="ExportGroup" Margin="396,93,19,226"  Click="ExportGroup_Clik" Background="#FF00FF7F" BorderBrush="Black" BorderThickness="1" Grid.Row="1"/>
+        <Button x:Name="Export" Content="Export" Margin="396,93,19,226"  Click="ExportGroup_Clik" Background="#FF00FF7F" BorderBrush="Black" BorderThickness="1" Grid.Row="1"/>
         <Button x:Name="button5" Content="Button5" Margin="396,123,18,196" Background="#FF9ACD32" BorderBrush="Black" BorderThickness="1" Grid.Row="1"/>
         <Button x:Name="button6" Content="Button6" Margin="396,153,19,166" Background="#FF00FF00" BorderBrush="Black" BorderThickness="1" Grid.Row="1"/>
 
 
         <Button x:Name="LogoutButton" Content="Logout" HorizontalAlignment="Left" Margin="396,1,0,0" VerticalAlignment="Top" Width="177" Click="LogoutButton_Click" Height="25" RenderTransformOrigin="0.515,-0.04" Grid.RowSpan="2"/>
+        <Button x:Name="AddSubGroupButton" Content="Add Subgroup" HorizontalAlignment="Left" Margin="10,6.2,0,0" Grid.Row="1" VerticalAlignment="Top" Width="107" Height="33" Click="AddSubGroupButton_Click_1"/>
+        <Button x:Name="EditButton_Copy" Content="Edit" HorizontalAlignment="Left" Margin="122,5.2,0,0" Grid.Row="1" VerticalAlignment="Top" Width="104" Height="34" Click="EditButton_Click"/>
 
     </Grid>
 </Window>
