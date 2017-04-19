@@ -14,19 +14,11 @@
             <RowDefinition Height="*"></RowDefinition>
         </Grid.RowDefinitions>
         <StackPanel Orientation="Vertical" Grid.Row="1" Margin="0,11,0,-11">
-
-            <Grid>
-                <!--<Grid.Background>
-                    <ImageBrush ImageSource="Pig.jpg" Opacity="0.3"/>
-                </Grid.Background>-->
-
-            </Grid>
         </StackPanel>
 
         <Label Content="Groups: " />
 
-        <TextBox 
-                 x:Name="textBox1" RenderTransformOrigin="-1.213,1.739" Margin="122,49,344,265" Grid.Row="1" />
+        <TextBox  x:Name="textBox1" RenderTransformOrigin="-1.213,1.739" Margin="122,49,344,265" Grid.Row="1" />
         <Button Height="31" Margin="10,49,0,0" x:Name="button1" VerticalAlignment="Top"
                 HorizontalAlignment="Left" Width="107" Click="button1_Click" Background="#FFADD8E6" BorderBrush="Black" BorderThickness="1" Content="Add Group" RenderTransformOrigin="3.329,0.609" Grid.Row="1"/>
         <Button x:Name="button2" Content="Remove Group" Margin="253,49,233,264"  Background="White" BorderBrush="Black" BorderThickness="1" RenderTransformOrigin="0.486,2.35" Grid.Row="1" Click=" button2_Click" />
@@ -42,12 +34,10 @@
                 <TreeViewItem Header="Mango Shake"/>
             </TreeViewItem>
         </TreeView>
-        <!--<Calendar Margin="0,-3,89,339" Grid.RowSpan="2"/>-->
+       
         <Grid/>
         <Calendar Margin="397,178,18,15" Grid.Row="1" Background="#FF7FFFD4">
-            <!--<Calendar.Background>
-                <ImageBrush ImageSource="Green.jpg" Opacity="0.3"/>
-            </Calendar.Background>-->
+            
         </Calendar>
 
         <Button x:Name="buttonNew" Content="Button" Margin="396,33,18,286" RenderTransformOrigin="1.32,3.85" Click=" button_Click_new" Background="#FF7FFFD4" BorderBrush="Black" BorderThickness="1" Grid.Row="1"/>
