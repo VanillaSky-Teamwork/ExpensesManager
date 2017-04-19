@@ -8,33 +8,56 @@
         WindowStartupLocation="CenterScreen"
         Width="600">
     <Grid>
-        <StackPanel Orientation="Vertical" Grid.Column="0" Margin="0,5,0,-5">
-            <Label Content="Groups: " />
-            <TextBox Height="23" HorizontalAlignment="Left" Margin="8,14,0,0"
-                 Name="textBox1" VerticalAlignment="Top" Width="127" />
-            <Button Height="23" Margin="140,14,0,0" Name="button1" VerticalAlignment="Top"
-                HorizontalAlignment="Left" Width="76" Click="button1_Click">
-                Add Item
-            </Button>
-            <TreeView Margin="10,10,0,13" Name="TreeView1" HorizontalAlignment="Left"
- VerticalAlignment="Top" Width="450" Height="200">
-                <TreeViewItem Header="Groups" Name="h">
-                    <TreeViewItem Header="Coke"></TreeViewItem>
-                    <TreeViewItem Header="Pepsi"></TreeViewItem>
-                    <TreeViewItem Header="Orange Juice"></TreeViewItem>
-                    <TreeViewItem Header="Milk"></TreeViewItem>
-                    <TreeViewItem Header="Iced Tea"></TreeViewItem>
-                    <TreeViewItem Header="Mango Shake"></TreeViewItem>
-                </TreeViewItem>
-            </TreeView>
 
+        <Grid.RowDefinitions>
+            <RowDefinition Height="25"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Vertical" Grid.Row="1" Margin="0,11,0,-11">
 
+            <Grid>
+                <!--<Grid.Background>
+                    <ImageBrush ImageSource="Pig.jpg" Opacity="0.3"/>
+                </Grid.Background>-->
 
-
-
-
-
+            </Grid>
         </StackPanel>
-        <Button x:Name="LogoutButton" Content="Logout" HorizontalAlignment="Left" Margin="463,3,0,0" VerticalAlignment="Top" Width="99" Click="LogoutButton_Click" Height="25"/>
+
+        <Label Content="Groups: " />
+
+        <TextBox 
+                 x:Name="textBox1" RenderTransformOrigin="-1.213,1.739" Margin="122,49,344,265" Grid.Row="1" />
+        <Button Height="31" Margin="10,49,0,0" x:Name="button1" VerticalAlignment="Top"
+                HorizontalAlignment="Left" Width="107" Click="button1_Click" Background="#FFADD8E6" BorderBrush="Black" BorderThickness="1" Content="Add Group" RenderTransformOrigin="3.329,0.609" Grid.Row="1"/>
+        <Button x:Name="button2" Content="Remove Group" Margin="253,49,233,264"  Background="White" BorderBrush="Black" BorderThickness="1" RenderTransformOrigin="0.486,2.35" Grid.Row="1" Click=" button2_Click" />
+
+        <TreeView Margin="10,82,0,0" Name="TreeView1" HorizontalAlignment="Left"
+ VerticalAlignment="Top" Width="349" Height="219" RenderTransformOrigin="0.498,1.045" Grid.Row="1">
+            <TreeViewItem Header="Groups" x:Name="TreeViewGroups">
+                <TreeViewItem Header="Coke"/>
+                <TreeViewItem Header="Pepsi"/>
+                <TreeViewItem Header="Orange Juice"/>
+                <TreeViewItem Header="Milk"/>
+                <TreeViewItem Header="Iced Tea"/>
+                <TreeViewItem Header="Mango Shake"/>
+            </TreeViewItem>
+        </TreeView>
+        <!--<Calendar Margin="0,-3,89,339" Grid.RowSpan="2"/>-->
+        <Grid/>
+        <Calendar Margin="397,178,18,15" Grid.Row="1" Background="#FF7FFFD4">
+            <!--<Calendar.Background>
+                <ImageBrush ImageSource="Green.jpg" Opacity="0.3"/>
+            </Calendar.Background>-->
+        </Calendar>
+
+        <Button x:Name="buttonNew" Content="Button" Margin="396,33,18,286" RenderTransformOrigin="1.32,3.85" Click=" button_Click_new" Background="#FF7FFFD4" BorderBrush="Black" BorderThickness="1" Grid.Row="1"/>
+        <Button x:Name="button3" Content="Button3" Margin="396,63,18,256" Click=" button3_Click" Background="#FF98FB98" BorderBrush="Black" BorderThickness="1" Grid.Row="1"/>
+        <Button x:Name="button4" Content="Button4" Margin="396,93,19,226" Click=" button4_Click" Background="#FF00FF7F" BorderBrush="Black" BorderThickness="1" Grid.Row="1"/>
+        <Button x:Name="button5" Content="Button5" Margin="396,123,18,196"  Click=" button5_Click" Background="#FF9ACD32" BorderBrush="Black" BorderThickness="1" Grid.Row="1"/>
+        <Button x:Name="button6" Content="Button6" Margin="396,153,19,166" Click=" button6_Click" Background="#FF00FF00" BorderBrush="Black" BorderThickness="1" Grid.Row="1"/>
+
+
+        <Button x:Name="LogoutButton" Content="Logout" HorizontalAlignment="Left" Margin="396,1,0,0" VerticalAlignment="Top" Width="177" Click="LogoutButton_Click" Height="25" RenderTransformOrigin="0.515,-0.04" Grid.RowSpan="2"/>
+
     </Grid>
 </Window>
