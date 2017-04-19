@@ -8,6 +8,7 @@ namespace ExpansesManager.Core
 	public class AuthenticationManager
 	{
 		private static User currentUser;
+		private static Group currentGroup;
 
 		public static void Login(string username, string password)
 		{
@@ -64,6 +65,15 @@ namespace ExpansesManager.Core
 			return currentUser;
 		}
 
+
+		public static Group GetGroupById(int id)
+		{
+			using (var context = new ExpansesManagerContext())
+			{
+				 currentGroup = context.Groups.FirstOrDefault(gr => gr.Id == id);
+			}
+			return currentGroup;
+		}
 
 
 	}

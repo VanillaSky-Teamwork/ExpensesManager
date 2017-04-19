@@ -5,8 +5,8 @@ namespace ExpansesManager.ViewModels
 {
     public class ElementViewModel : INotifyPropertyChanged
     {
-        private string id;
-        public string Id
+        private int id;
+        public int Id
         {
             get { return id; }
             set

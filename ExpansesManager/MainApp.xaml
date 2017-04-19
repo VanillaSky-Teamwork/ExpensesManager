@@ -17,21 +17,12 @@
         </StackPanel>
 
         <Label Content="Groups: " />
+        <Button Height="31" Margin="10,44.2,0,0" x:Name="AddGroupButton" VerticalAlignment="Top" HorizontalAlignment="Left" Width="107" Click="AddGroupButton_Click" Background="#FFADD8E6" BorderBrush="Black" BorderThickness="1" Content="Add Group" RenderTransformOrigin="3.329,0.609" Grid.Row="1"/>
+        <Button x:Name="RemoveGroupButton" Content="Remove Group" Margin="122,44.2,363.6,263.4"  Background="White" BorderBrush="Black" BorderThickness="1" RenderTransformOrigin="0.486,2.35" Grid.Row="1" Click="RemoveGroupButton_Click" />
 
-        <TextBox  x:Name="textBox1" RenderTransformOrigin="-1.213,1.739" Margin="122,49,344,265" Grid.Row="1" />
-        <Button Height="31" Margin="10,49,0,0" x:Name="button1" VerticalAlignment="Top"
-                HorizontalAlignment="Left" Width="107" Click="button1_Click" Background="#FFADD8E6" BorderBrush="Black" BorderThickness="1" Content="Add Group" RenderTransformOrigin="3.329,0.609" Grid.Row="1"/>
-        <Button x:Name="button2" Content="Remove Group" Margin="253,49,233,264"  Background="White" BorderBrush="Black" BorderThickness="1" RenderTransformOrigin="0.486,2.35" Grid.Row="1" Click=" button2_Click" />
-
-        <TreeView Margin="10,82,0,0" Name="TreeView1" HorizontalAlignment="Left"
- VerticalAlignment="Top" Width="349" Height="219" RenderTransformOrigin="0.498,1.045" Grid.Row="1">
+        <TreeView Margin="10,82,0,0" Name="TreeView1" HorizontalAlignment="Left" VerticalAlignment="Top" Width="349" Height="219" RenderTransformOrigin="0.498,1.045" Grid.Row="1">
             <TreeViewItem Header="Groups" x:Name="TreeViewGroups">
-                <TreeViewItem Header="Coke"/>
-                <TreeViewItem Header="Pepsi"/>
-                <TreeViewItem Header="Orange Juice"/>
-                <TreeViewItem Header="Milk"/>
-                <TreeViewItem Header="Iced Tea"/>
-                <TreeViewItem Header="Mango Shake"/>
+                
             </TreeViewItem>
         </TreeView>
        
@@ -42,11 +33,11 @@
             </Calendar.Background>-->
         </Calendar>
 
-        <Button x:Name="buttonNew" Content="Button" Margin="396,33,18,286" RenderTransformOrigin="1.32,3.85" Click=" button_Click_new" Background="#FF7FFFD4" BorderBrush="Black" BorderThickness="1" Grid.Row="1"/>
-        <Button x:Name="button3" Content="Button3" Margin="396,63,18,256" Click=" button3_Click" Background="#FF98FB98" BorderBrush="Black" BorderThickness="1" Grid.Row="1"/>
-        <Button x:Name="button4" Content="Button4" Margin="396,93,19,226" Click=" button4_Click" Background="#FF00FF7F" BorderBrush="Black" BorderThickness="1" Grid.Row="1"/>
-        <Button x:Name="button5" Content="Button5" Margin="396,123,18,196"  Click=" button5_Click" Background="#FF9ACD32" BorderBrush="Black" BorderThickness="1" Grid.Row="1"/>
-        <Button x:Name="button6" Content="Button6" Margin="396,153,19,166" Click=" button6_Click" Background="#FF00FF00" BorderBrush="Black" BorderThickness="1" Grid.Row="1"/>
+        <Button x:Name="buttonNew" Content="Button" Margin="396,33,18,286" RenderTransformOrigin="1.32,3.85" Background="#FF7FFFD4" BorderBrush="Black" BorderThickness="1" Grid.Row="1"/>
+        <Button x:Name="button3" Content="Button3" Margin="396,63,18,256" Background="#FF98FB98" BorderBrush="Black" BorderThickness="1" Grid.Row="1"/>
+        <Button x:Name="button4" Content="Button4" Margin="396,93,19,226" Background="#FF00FF7F" BorderBrush="Black" BorderThickness="1" Grid.Row="1"/>
+        <Button x:Name="button5" Content="Button5" Margin="396,123,18,196" Background="#FF9ACD32" BorderBrush="Black" BorderThickness="1" Grid.Row="1"/>
+        <Button x:Name="button6" Content="Button6" Margin="396,153,19,166" Background="#FF00FF00" BorderBrush="Black" BorderThickness="1" Grid.Row="1"/>
 
 
         <Button x:Name="LogoutButton" Content="Logout" HorizontalAlignment="Left" Margin="396,1,0,0" VerticalAlignment="Top" Width="177" Click="LogoutButton_Click" Height="25" RenderTransformOrigin="0.515,-0.04" Grid.RowSpan="2"/>
