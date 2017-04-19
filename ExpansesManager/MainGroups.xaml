@@ -8,24 +8,8 @@
         WindowStartupLocation="CenterScreen"
         Title="MainGroups" Height="350" Width="525">
     <Grid>
-        <!--<Grid.ColumnDefinitions>
-            <ColumnDefinition Width="171*" />
-            <ColumnDefinition Width="164*"/>
-            <ColumnDefinition Width="182*"/>
-        </Grid.ColumnDefinitions>
-        <Grid.RowDefinitions>
 
-            <RowDefinition Height="53*"/>
-            <RowDefinition Height="53*"/>
-            <RowDefinition Height="53*"/>
-            <RowDefinition Height="53*"/>
-            <RowDefinition Height="54*"/>
-            <RowDefinition Height="53*"/>
-
-        </Grid.RowDefinitions>
-        <ListView Grid.ColumnSpan="3" Grid.RowSpan="6"/>-->
-
-        <ListView Margin="10" Name="lvUsers" Background="AntiqueWhite">
+        <ListView Margin="20,20,20,59" Name="lvUsers" Background="AntiqueWhite">
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="Group" Width="80"  DisplayMemberBinding="{Binding Group}" />
@@ -34,31 +18,28 @@
                     <GridViewColumn Header="Week" Width="50" DisplayMemberBinding="{Binding Week}" />
                     <GridViewColumn Header="Month" Width="60" DisplayMemberBinding="{Binding Month}" />
                     <GridViewColumn Header="Year" Width="70" DisplayMemberBinding="{Binding Year}" />
-                    <GridViewColumn >
+                    <GridViewColumn Header="Edit" Width="90">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
-                                <Button Content="Edit" Click="EditGroup_Click" Width="40" CommandParameter="{Binding Id}"/>
-                            </DataTemplate>
-                        </GridViewColumn.CellTemplate>
-                    </GridViewColumn>
-                    <GridViewColumn>
-                        <GridViewColumn.CellTemplate>
-                            <DataTemplate>
-                                <Button Content="Delete" Click="DeleteGroup_Click" Width="40"/>
+                                <Button Content="Edit" Click="EditGroup_Click" Width="60" CommandParameter="{Binding}"/>
+
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
 
+                    <!--<Button Content="Back" Click="Back_Click"Height="100" Width="75"/>-->
 
                 </GridView>
             </ListView.View>
-            <Button x:Name="Delete" Click="DeleteGroup_Click" Height="100" Width="75"/>
+            <Button x:Name="Delete" Click="EditGroup_Click" Height="100" Width="75"/>
             <Button x:Name="Edit" Click="EditGroup_Click" Height="100" Width="75"/>
-            <Button x:Name="button2" Content="Button" Height="100" Width="75"/>
-            <Button x:Name="button3" Content="Button" Height="100" Width="75"/>
-            <Button x:Name="butto4" Content="Button" Height="100" Width="75"/>
-            <Button x:Name="button5" Content="Button" Height="100" Width="75"/>
+            <Button x:Name="button2" Content="EditGroup_Click" Height="100" Width="75"/>
+            <Button x:Name="button3" Content="EditGroup_Click" Height="100" Width="75"/>
+            <Button x:Name="butto4" Content="EditGroup_Click" Height="100" Width="75"/>
+            <Button x:Name="button5" Content="EditGroup_Click" Height="100" Width="75"/>
+            <Button x:Name="backButton" Content="Back_Click" Height="100" Width="75"/>
         </ListView>
+        <Button x:Name="Back" Content="Back" Click="Back_Click" HorizontalAlignment="Left" Margin="20,281,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="-0.84,-0.4" Height="28"/>
 
     </Grid>
 </Window>
