@@ -29,33 +29,12 @@ namespace ExpansesManager
             }
             //			this.GroupsGrid.RowEditEnding += OnRowEditEnding;
         }
-        /// <summary>
-        /// Interaction logic for MainApp.xaml
-        /// </summary>
-        //public partial class MainApp : Window
-        //{
-        //    public MainApp()
-        //    {
-        //        InitializeComponent();
-        //        var vm = new MainAppViewModel();
-        //        User currentUser = AuthenticationManager.GetCurrentUser();
-        //        using (var contex = new ExpansesManagerContext())
-        //        {
-        //            var user = contex.Users.Find(currentUser.Id);
-        //            vm.Groups = new ObservableCollection<GroupViewModel>(Mapper.Instance.Map<IEnumerable<Group>, ObservableCollection<GroupViewModel>>(user.Groups));
-        //            //this.GroupsGrid.ItemsSource = vm.Groups;
-        //        }
-        //        //this.GroupsGrid.RowEditEnding += OnRowEditEnding;
-        //    }
-
-
-
+     
         protected void Page_Load(object sender, EventArgs e)
         {
 
 
         }
-
         private void textBox1_TextChanged(object sender, System.Windows.Controls.TextChangedEventArgs e)
         {
 
@@ -93,29 +72,8 @@ namespace ExpansesManager
             TreeViewItem newGroup = new TreeViewItem();
             newGroup.Header = textBox1.Text;
             TreeViewGroups.Items.Add(newGroup);
-            //using (var context = new ExpansesManagerContext())
-            //{
-            //	Group group = new Group();
-            //	group.Name = textBox1.Text;
-            //	User currentUser = AuthenticationManager.GetCurrentUser();
-            //	var user = context.Users.Find(currentUser.Id);
-            //	group.UserId = currentUser.Id;
-            //	context.Groups.Add(group);
-            //	context.SaveChanges();
-            //}
-            //	TreeViewItem newGroup = new TreeViewItem();
-            //	newGroup.Header = textBox1.Text;
-            //	h.Items.Add(newGroup);
-
-            //TreeViewItem newSub = new TreeViewItem();
-            //newSub.Header = textBox1.Text;
-            //TreeViewGroups.newGroup[0].Add
-
-
-
-
+            
         }
-
         private void button2_Click(object sender, RoutedEventArgs e)
         {
             var Button2 = new Button();
