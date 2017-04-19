@@ -30,13 +30,6 @@ namespace ExpansesManager
                 foreach (var group in contex.Groups.Where(g => g.IsActive == true))
                 {
                     TreeViewGroups.Items.Add(group.Name);
-
-                    foreach (var subgroup in group.SubGroups)
-                    {
-                        var f = TreeViewGroups.Items[TreeViewGroups.Items.IndexOf(group.Name)];
-                        MessageBox.Show(f.ToString());
-
-                    }
                 }
             }
         }
@@ -90,9 +83,9 @@ namespace ExpansesManager
             }
         }
 
-        private void EditButton1_Click(object sender, RoutedEventArgs e)
+        private void EditPasswordButton1_Click(object sender, RoutedEventArgs e)
         {
-            EditModeMainApp edit = new EditModeMainApp();
+            UserEditPassword edit = new UserEditPassword();
             this.Close();
             edit.ShowDialog(); 
         }
@@ -136,6 +129,13 @@ namespace ExpansesManager
                 group.Items.Add(newSubGroup);
 
             }
+        }
+
+        private void EditButton_Click(object sender, RoutedEventArgs e)
+        {
+            EditModeMainApp edit = new EditModeMainApp();
+            this.Close();
+            edit.ShowDialog();
         }
     }
 }

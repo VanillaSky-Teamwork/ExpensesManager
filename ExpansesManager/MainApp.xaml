@@ -28,7 +28,7 @@
 
         <Grid/>
 
-        <Button x:Name="EditButton" Content="Edit Password" Margin="396,33,18,286" RenderTransformOrigin="1.32,3.85" Click="EditButton1_Click" Background="#FF7FFFD4" BorderBrush="Black" BorderThickness="1" Grid.Row="1"/>
+        <Button x:Name="EditPasswordButton" Content="Edit Password" Margin="396,33,18,286" RenderTransformOrigin="1.32,3.85" Click="EditPasswordButton1_Click" Background="#FF7FFFD4" BorderBrush="Black" BorderThickness="1" Grid.Row="1"/>
         <Button x:Name="Statistic" Content="Statistic" Margin="396,63,18,256" Click="Statisyic_Clik" Background="#FF98FB98" BorderBrush="Black" BorderThickness="1" Grid.Row="1"/>
         <Button x:Name="Export" Content="Export" Margin="396,93,19,226"  Click="ExportGroup_Clik" Background="#FF00FF7F" BorderBrush="Black" BorderThickness="1" Grid.Row="1"/>
         <Button x:Name="button5" Content="Button5" Margin="396,123,18,196" Background="#FF9ACD32" BorderBrush="Black" BorderThickness="1" Grid.Row="1"/>
