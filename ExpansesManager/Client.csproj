@@ -72,6 +72,9 @@
     <Compile Include="MainApp.xaml.cs">
       <DependentUpon>MainApp.xaml</DependentUpon>
     </Compile>
+    <Compile Include="MainGroups.xaml.cs">
+      <DependentUpon>MainGroups.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UserEditPassword.xaml.cs">
       <DependentUpon>UserEditPassword.xaml</DependentUpon>
     </Compile>
@@ -84,6 +87,10 @@
     <Compile Include="ViewModels\GroupViewModel.cs" />
     <Compile Include="ViewModels\SubGroupViewModel.cs" />
     <Page Include="MainApp.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainGroups.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

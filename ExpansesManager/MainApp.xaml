@@ -37,7 +37,9 @@
        
         <Grid/>
         <Calendar Margin="397,178,18,15" Grid.Row="1" Background="#FF7FFFD4">
-            
+            <!--<Calendar.Background>
+                <ImageBrush ImageSource="Green.jpg" Opacity="0.3"/>
+            </Calendar.Background>-->
         </Calendar>
 
         <Button x:Name="buttonNew" Content="Button" Margin="396,33,18,286" RenderTransformOrigin="1.32,3.85" Click=" button_Click_new" Background="#FF7FFFD4" BorderBrush="Black" BorderThickness="1" Grid.Row="1"/>

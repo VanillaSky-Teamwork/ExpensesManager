@@ -97,7 +97,9 @@ namespace ExpansesManager
 
         private void button_Click_new(object sender, RoutedEventArgs e)
         {
-
+            MainGroups main = new MainGroups();
+            this.Close();
+            main.ShowDialog();
         }
         private void button3_Click(object sender, RoutedEventArgs e)
         {
