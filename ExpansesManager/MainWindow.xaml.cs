@@ -41,17 +41,16 @@ namespace ExpansesManager
 			}
 
 			MainApp mainApp = new MainApp();
-
-            mainApp.ShowDialog();
             App.Current.MainWindow.Close();
+            mainApp.ShowDialog();
 		}
 
 		private void RegisterButton_Click(object sender, RoutedEventArgs e)
 		{
 			RegisterWindow register = new RegisterWindow();
+            App.Current.MainWindow.Close();
             register.ShowDialog();
 
-            App.Current.MainWindow.Close();
 		}
 	}
 }
