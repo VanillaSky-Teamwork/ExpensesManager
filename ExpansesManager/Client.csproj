@@ -99,7 +99,6 @@
     <Compile Include="ViewModels\ElementViewModel.cs" />
     <Compile Include="ViewModels\GroupViewModel.cs" />
     <Compile Include="ViewModels\SubGroupViewModel.cs" />
-
     <Page Include="EditModeMainApp.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

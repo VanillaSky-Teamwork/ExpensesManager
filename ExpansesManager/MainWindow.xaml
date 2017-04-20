@@ -8,11 +8,11 @@
         WindowStartupLocation="CenterScreen"
         Title="MainWindow" Height="350" Width="525">
     <Grid>
-        <Button x:Name="button1" Content="Login" HorizontalAlignment="Left" Margin="282,194,0,0" VerticalAlignment="Top" Width="75" Click="LoginButton_Click"/>
-        <TextBox x:Name="UsernameTextBox" HorizontalAlignment="Left" Height="23" Margin="153,124,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="204"/>
+        <Button x:Name="button1" Content="Login" HorizontalAlignment="Left" Margin="200,194,0,0" VerticalAlignment="Top" Width="102" Click="LoginButton_Click" BorderBrush="Black" Height="25" />
+        <TextBox x:Name="UsernameTextBox" HorizontalAlignment="Left" Height="25" Margin="153,124,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="204"/>
         <Label x:Name="label" Content="Username:" HorizontalAlignment="Left" Margin="81,121,0,0" VerticalAlignment="Top" Width="68"/>
         <Label x:Name="label1" Content="Password:" HorizontalAlignment="Left" Margin="81,155,0,0" VerticalAlignment="Top" Width="67" RenderTransformOrigin="0.473,0.066"/>
-        <Button x:Name="button" Content="Register" HorizontalAlignment="Left" Margin="28,274,0,0" VerticalAlignment="Top" Width="75" Click="RegisterButton_Click"/>
+        <Button x:Name="button" Content="Register" HorizontalAlignment="Left" Margin="200,249,0,0" VerticalAlignment="Top" Width="102" Click="RegisterButton_Click" BorderBrush="Black" RenderTransformOrigin="3.333,-1.75" Height="24"/>
         <PasswordBox x:Name="PasswordBox" PasswordChar="*" HorizontalAlignment="Left" Margin="153,155,0,0" VerticalAlignment="Top" Width="204" Height="26"/>
         <Label x:Name="ErrorLabel" Content="" HorizontalAlignment="Left" Margin="144,81,0,0" VerticalAlignment="Top" Height="35" Width="289"/>
 

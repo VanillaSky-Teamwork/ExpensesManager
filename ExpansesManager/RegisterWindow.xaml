@@ -9,8 +9,8 @@
         Title="RegisterWindow" Height="350" Width="525">
     <Grid>
         <TextBox x:Name="UsernameTextBox" HorizontalAlignment="Left" Height="23" Margin="157,78,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="225" />
-        <Button x:Name="button" Content="Register" HorizontalAlignment="Left" Margin="306,191,0,0" VerticalAlignment="Top" Width="75" Click="RegisterButton_Click"/>
-        <Button x:Name="button1" Content="Back" HorizontalAlignment="Left" Margin="71,273,0,0" VerticalAlignment="Top" Width="75" Click="BackButton_Click"/>
+        <Button x:Name="button" Content="Register" HorizontalAlignment="Left" Margin="232,191,0,0" VerticalAlignment="Top" Width="75" Click="RegisterButton_Click"/>
+        <Button x:Name="button1" Content="Back" HorizontalAlignment="Left" Margin="232,235,0,0" VerticalAlignment="Top" Width="75" Click="BackButton_Click"/>
         <Label x:Name="label" Content="Username:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="86,78,0,0"/>
         <Label x:Name="label1" Content="Password:" HorizontalAlignment="Left" Margin="90,135,0,0" VerticalAlignment="Top" Width="61"/>
         <Label x:Name="label2" Content="Repeat Password:" HorizontalAlignment="Left" Margin="47,163,0,0" VerticalAlignment="Top" Width="104"/>

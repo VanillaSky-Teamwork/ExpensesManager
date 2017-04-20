@@ -17,7 +17,7 @@
                 </TransformGroup>
             </TextBox.RenderTransform>
         </TextBox>
-        <Button x:Name="button" Content="Ok" HorizontalAlignment="Left" Margin="101,49,0,0" VerticalAlignment="Top" Width="75" Click="button_Click"/>
+        <Button x:Name="button" Content="Ok" HorizontalAlignment="Left" Margin="101,49,0,0" VerticalAlignment="Top" Width="75" Click="button_Click" BorderBrush="Black"/>
 
     </Grid>
 </Window>

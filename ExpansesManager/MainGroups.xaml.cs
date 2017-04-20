@@ -45,11 +45,15 @@ namespace ExpansesManager
 
         private void EditGroup_Click(object sender, RoutedEventArgs e)
         {
-          
+            using (var ex= new ExpansesManagerContext())
+            {
+               // ex.Groups
+            }
         
             EditModeMainApp ed = new EditModeMainApp();
             this.Close();
             ed.ShowDialog(); 
+            
         }
     
 
@@ -60,18 +64,27 @@ namespace ExpansesManager
 
             //App.Current.MainWindow.Close();
         }
-        private void Statisyic_Clik(object sender, RoutedEventArgs e)
-        {
-            MainGroups edit = new MainGroups();
-            this.Close();
-            edit.ShowDialog();
-        }
+        
 
              private void Back_Click(object sender, RoutedEventArgs e)
         {
             MainApp edit = new MainApp();
             this.Close();
             edit.ShowDialog();
+        }
+        
+             private void Add_Group_Click(object sender, RoutedEventArgs e)
+        {
+            AddWindow addWin = new AddWindow();
+            this.Close();
+            addWin.ShowDialog();
+        }
+       
+                  private void ExportGroup_Click(object sender, RoutedEventArgs e)
+        {
+            ExportGroupToJson ex = new ExportGroupToJson();
+            this.Close();
+            ex.ShowDialog();
         }
     }
 }
