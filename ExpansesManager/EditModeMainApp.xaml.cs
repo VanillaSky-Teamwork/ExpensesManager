@@ -113,5 +113,67 @@ namespace ExpansesManager
             this.Close();
             mainApp.ShowDialog();
         }
+
+        private void DeleteGroup_OnClick(object sender, RoutedEventArgs e)
+        {
+            var btn = sender as Button;
+            var group = btn?.Tag as GroupViewModel;
+            if (group != null)
+            {
+                using (var db = new ExpansesManagerContext())
+                {
+                    var removeDbGroup = db.Groups.Find(group.Id);
+                    if (removeDbGroup != null)
+                    {
+                        db.Groups.Remove(removeDbGroup);
+                        db.SaveChanges();
+                        var currentUser = db.Users.Find(AuthenticationManager.GetCurrentUser().Id);
+                        var vm = this.GroupsGrid.DataContext as MainAppViewModel;
+                        vm.Groups = new ObservableCollection<GroupViewModel>(Mapper.Instance.Map<IEnumerable<Group>, ObservableCollection<GroupViewModel>>(currentUser.Groups));
+                        this.GroupsGrid.ItemsSource = null;
+                        ;
+                        this.GroupsGrid.ItemsSource = vm.Groups;
+                    }
+                }
+            }
+        }
+
+        private void DeleteSubGroup_OnClick(object sender, RoutedEventArgs e)
+        {
+            var btn = sender as Button;
+            var subGroup = btn?.Tag as SubGroupViewModel;
+            if (subGroup != null)
+            {
+                using (var db = new ExpansesManagerContext())
+                {
+                    (this.SubGroupsGrid.ItemsSource as ObservableCollection<SubGroupViewModel>).Remove(subGroup);
+                    var removeDbSubGroup = db.SubGroups.Find(subGroup.Id);
+                    if (removeDbSubGroup != null)
+                    {
+                        db.SubGroups.Remove(removeDbSubGroup);
+                        db.SaveChanges();
+                    }
+                }
+            }
+        }
+
+        private void DeleteElement_OnClick(object sender, RoutedEventArgs e)
+        {
+            var btn = sender as Button;
+            var element = btn?.Tag as ElementViewModel;
+            if (element != null)
+            {
+                using (var db = new ExpansesManagerContext())
+                {
+                    (this.ElementsGrid.ItemsSource as ObservableCollection<ElementViewModel>).Remove(element);
+                    var removeDbelement = db.Elements.Find(element.Id);
+                    if (removeDbelement != null)
+                    {
+                        db.Elements.Remove(removeDbelement);
+                        db.SaveChanges();
+                    }
+                }
+            }
+        }
     }
 }

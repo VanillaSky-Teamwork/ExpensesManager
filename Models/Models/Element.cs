@@ -1,9 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Models.Models
 {
@@ -19,5 +16,8 @@ namespace Models.Models
         public decimal Price { get; set; }
 
         public DateTime DateBought { get; set; }
+        [ForeignKey("SubGroup")]
+        public int SubGroupId { get; set; }
+        public virtual SubGroup SubGroup { get; set; }
     }
 }

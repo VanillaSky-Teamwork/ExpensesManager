@@ -37,10 +37,17 @@
                       SelectionUnit="FullRow"
                       CanUserAddRows="True"
                       SelectedIndex="0"
-                      CanUserDeleteRows="True">
+                      CanUserDeleteRows="False">
                 <DataGrid.Columns>
                     <!--<DataGridCheckBoxColumn Header="Is Active" Binding="{Binding Path=IsActive, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"></DataGridCheckBoxColumn>-->
                     <DataGridTextColumn Header="Group Name" Width="*" Binding="{Binding Path=Name, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"></DataGridTextColumn>
+                    <DataGridTemplateColumn Header="Delete">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button Content="Delete" Tag="{Binding}" Click="DeleteGroup_OnClick"/>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
                 </DataGrid.Columns>
             </DataGrid>
         </StackPanel>
@@ -58,10 +65,17 @@
                       SelectionUnit="FullRow"
                       CanUserAddRows="True"
                       SelectedIndex="0"
-                      CanUserDeleteRows="True">
+                      CanUserDeleteRows="False">
                     <DataGrid.Columns>
                         <!--<DataGridCheckBoxColumn Header="Is Active" Binding="{Binding Path=IsActive, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"></DataGridCheckBoxColumn>-->
                         <DataGridTextColumn Header="Sub Group Name" Width="*" Binding="{Binding Path=Name, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"></DataGridTextColumn>
+                        <DataGridTemplateColumn Header="Delete">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Button Content="Delete" Tag="{Binding}" Click="DeleteSubGroup_OnClick"/>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
                     </DataGrid.Columns>
                 </DataGrid>
             </StackPanel>
@@ -74,12 +88,19 @@
                       SelectionUnit="FullRow"
                       CanUserAddRows="True"
                       SelectedIndex="0"
-                      CanUserDeleteRows="True">
+                      CanUserDeleteRows="False">
                     <DataGrid.Columns>
                         <DataGridTextColumn Header="Element Name" Binding="{Binding Path=Name, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"></DataGridTextColumn>
                         <DataGridTextColumn Header="Price" Binding="{Binding Path=Price, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"></DataGridTextColumn>
                         <!--<DataGridTextColumn Header="Date Bought" Width="*" Binding="{Binding Path=DateBought, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"></DataGridTextColumn>-->
                         <DataGridTemplateColumn Header="Date Bought" Width="*" CellTemplate="{StaticResource DateTemplate}" CellEditingTemplate="{StaticResource EditingDateTemplate}"></DataGridTemplateColumn>
+                        <DataGridTemplateColumn Header="Delete">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Button Content="Delete" Tag="{Binding}" Click="DeleteElement_OnClick"/>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
                     </DataGrid.Columns>
                 </DataGrid>
             </StackPanel>
