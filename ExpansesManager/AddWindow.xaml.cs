@@ -34,5 +34,12 @@ namespace ExpansesManager
 
             this.Close();
         }
+
+        private void Back_Click1(object sender, RoutedEventArgs e)
+        {
+           this.Close();
+          
+        }
+
     }
 }

@@ -83,9 +83,10 @@ namespace ExpansesManager
 
 		private void Cancel_Click(object sender, RoutedEventArgs e)
 		{
-		
+            MainApp map = new MainApp();
 			this.Close();
-			
+
+            map.ShowDialog();
 		}
 	}
 }
