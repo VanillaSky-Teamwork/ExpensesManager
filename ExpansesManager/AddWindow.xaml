@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ExpansesManager"
         mc:Ignorable="d"
-        Title="AddWindow" Height="114.322" Width="288.491">
+        Title="AddWindow" Height="114.322" Width="288.491" HorizontalAlignment="Center">
     <Grid Margin="0,0,4.2,2.4">
         <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="25" Margin="58,13,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="155" RenderTransformOrigin="0.5,0.5">
             <TextBox.RenderTransform>
@@ -17,7 +17,9 @@
                 </TransformGroup>
             </TextBox.RenderTransform>
         </TextBox>
-        <Button x:Name="button" Content="Ok" HorizontalAlignment="Left" Margin="101,49,0,0" VerticalAlignment="Top" Width="75" Click="button_Click" BorderBrush="Black"/>
+        <Button x:Name="button" Content="Ok" HorizontalAlignment="Left" Margin="51,49,0,0" VerticalAlignment="Top" Width="75" Click="button_Click" BorderBrush="Black"/>
+        <Button x:Name="button1" Content="Cancel" HorizontalAlignment="Left" Margin="165,49,0,0" VerticalAlignment="Top" Width="75" Click="Back_Click1" BorderBrush="Black"/>
 
     </Grid>
 </Window>
+<!--Back_Click1-->
