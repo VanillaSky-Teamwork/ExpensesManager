@@ -5,6 +5,10 @@ namespace ExpansesManager.ViewModels
 {
     public class ElementViewModel : INotifyPropertyChanged
     {
+        public ElementViewModel()
+        {
+            this.dateBought = DateTime.UtcNow;
+        }
         private int id;
         public int Id
         {

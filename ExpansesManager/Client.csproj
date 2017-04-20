@@ -101,6 +101,7 @@
     </Compile>
     <Compile Include="ViewModels\ElementViewModel.cs" />
     <Compile Include="ViewModels\GroupViewModel.cs" />
+    <Compile Include="ViewModels\StatisticsViewModel.cs" />
     <Compile Include="ViewModels\SubGroupViewModel.cs" />
     <Page Include="EditModeMainApp.xaml">
       <SubType>Designer</SubType>

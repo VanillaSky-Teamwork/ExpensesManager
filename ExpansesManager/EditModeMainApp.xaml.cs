@@ -77,6 +77,11 @@ namespace ExpansesManager
                                                 db.SaveChanges();
                                             }
                                         }
+                                        else
+                                        {
+                                            dbSubGroup.Elements.Add(element);
+                                            db.SaveChanges();
+                                        }
                                     }
                                 }
                             });
@@ -88,6 +93,26 @@ namespace ExpansesManager
                                 {
                                     dbGroup.SubGroups.Add(sg);
                                     db.SaveChanges();
+
+                                    foreach (var element in sg.Elements)
+                                    {
+                                        var dbElement = sg.Elements.FirstOrDefault(el => el.Id == element.Id);
+                                        if (dbElement != null && element.Id > 0)
+                                        {
+                                            if (dbElement.Name != element.Name || dbElement.Price != element.Price || dbElement.DateBought != element.DateBought)
+                                            {
+                                                dbElement.Name = element.Name;
+                                                dbElement.Price = element.Price;
+                                                dbElement.DateBought = element.DateBought;
+                                                db.SaveChanges();
+                                            }
+                                        }
+                                        else
+                                        {
+                                            sg.Elements.Add(element);
+                                            db.SaveChanges();
+                                        }
+                                    }
                                 });
                             }
                         }
@@ -105,6 +130,7 @@ namespace ExpansesManager
                 vm.Groups = new ObservableCollection<GroupViewModel>(Mapper.Instance.Map<IEnumerable<Group>, ObservableCollection<GroupViewModel>>(currentUser.Groups));
             }
             this.GroupsGrid.UpdateLayout();
+            MessageBox.Show("Successfully saved");
         }
 
         private void BackButton_Click(object sender, RoutedEventArgs e)
@@ -131,7 +157,7 @@ namespace ExpansesManager
                         var vm = this.GroupsGrid.DataContext as MainAppViewModel;
                         vm.Groups = new ObservableCollection<GroupViewModel>(Mapper.Instance.Map<IEnumerable<Group>, ObservableCollection<GroupViewModel>>(currentUser.Groups));
                         this.GroupsGrid.ItemsSource = null;
-                        ;
+                        
                         this.GroupsGrid.ItemsSource = vm.Groups;
                     }
                 }

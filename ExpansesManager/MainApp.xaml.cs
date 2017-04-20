@@ -51,8 +51,10 @@ namespace ExpansesManager
 					MessageBox.Show("Please select first.");
 					return;
 				}
-				context.Groups.FirstOrDefault(g => g.Name == TreeView1.SelectedItem.ToString() && g.IsActive == true).IsActive = false;
-				//context.SaveChanges();
+				//context.Groups.FirstOrDefault(g => g.Name == TreeView1.SelectedItem.ToString() && g.IsActive == true).IsActive = false;
+                var group = context.Groups.FirstOrDefault(g => g.Name == TreeView1.SelectedItem.ToString() && g.IsActive == true);
+                context.Groups.Remove(group);
+				context.SaveChanges();
 			}
 
 			TreeViewItem newGroup = new TreeViewItem();
@@ -75,7 +77,7 @@ namespace ExpansesManager
 				group.UserId = AuthenticationManager.GetCurrentUser().Id;
 
 				context.Groups.Add(group);
-				//context.SaveChanges();
+				context.SaveChanges();
 
 				TreeViewItem newGroup = new TreeViewItem();
 				newGroup.Header = addWindow.textBox.Text;
@@ -116,7 +118,7 @@ namespace ExpansesManager
 				};
 
 				context.Groups.FirstOrDefault(g => g.Name == TreeView1.SelectedItem.ToString()).SubGroups.Add(subGroup);
-				//context.SaveChanges();
+				context.SaveChanges();
 
 				TreeViewItem group = new TreeViewItem()
 				{

@@ -1,7 +1,9 @@
 ﻿using Data;
 using ExpansesManager.Core;
+using ExpansesManager.ViewModels;
 using Models.Models;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -27,18 +29,29 @@ namespace ExpansesManager
             InitializeComponent();
             var vm = new MainAppViewModel();
             User currentUser = AuthenticationManager.GetCurrentUser();
-            using (var contex = new ExpansesManagerContext())
+
+            using (var context = new ExpansesManagerContext())
             {
-
-
-                List<Group> items = new List<Group>();
-                items.Add(new Group());
-                //{ Name = "John Doe", Age = 42, Mail = "john@doe-family.com" });
-                //items.Add(new Group()
-                //{ Name = "Jane Doe", Age = 39, Mail = "jane@doe-family.com" });
-                //items.Add(new Group()
-                //{ Name = "Sammy Doe", Age = 7, Mail = "sammy.doe@gmail.com" });
-                //lvUsers.ItemsSource = items;
+                var groups = context.Groups.Where(c => c.UserId == currentUser.Id);
+                var list = new List<StatisticsViewModel>();
+                 
+                foreach (var gr in groups)
+                {
+                    foreach (var item in gr.SubGroups)
+                    {
+                        list.Add(new StatisticsViewModel()
+                        {
+                            GroupName = gr.Name,
+                            SubGroupName = item.Name,
+                            TotalSubGroupPrice = item.Elements.Sum(e => e.Price),
+                            DayPrice = item.Elements.Where(e => e.DateBought.Date == DateTime.Today.Date).Sum(e => e.Price),
+                            WeekPrice = item.Elements.Where(e => e.DateBought <= DateTime.Today.AddDays(-7) && e.DateBought <= DateTime.Today).Sum(e => e.Price),
+                            MonthPrice = item.Elements.Where(e => e.DateBought <= DateTime.Today.AddMonths(-1) && e.DateBought <= DateTime.Today).Sum(e => e.Price),
+                            YearPrice = item.Elements.Where(e => e.DateBought.Year <= DateTime.Today.AddYears(-1).Year && e.DateBought.Date <= DateTime.Today.Date).Sum(e => e.Price),
+                        });
+                    }
+                }
+                this.lvUsers.ItemsSource = list;
             }
 
         }
@@ -54,17 +67,7 @@ namespace ExpansesManager
             this.Close();
             ed.ShowDialog(); 
             
-        }
-    
-
-        private void DeleteGroup_Click(object sender, RoutedEventArgs e)
-        {
-            //RegisterWindow register = new RegisterWindow();
-            //register.ShowDialog();
-
-            //App.Current.MainWindow.Close();
-        }
-        
+        }        
 
              private void Back_Click(object sender, RoutedEventArgs e)
         {
@@ -73,13 +76,6 @@ namespace ExpansesManager
             edit.ShowDialog();
         }
         
-             private void Add_Group_Click(object sender, RoutedEventArgs e)
-        {
-            AddWindow addWin = new AddWindow();
-            this.Close();
-            addWin.ShowDialog();
-        }
-       
                   private void ExportGroup_Click(object sender, RoutedEventArgs e)
         {
             ExportGroupToJson ex = new ExportGroupToJson();

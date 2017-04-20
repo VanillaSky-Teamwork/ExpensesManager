@@ -12,13 +12,13 @@
         <ListView Margin="20,20,20,59" Name="lvUsers" Background="AntiqueWhite">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn Header="Group" Width="60"  DisplayMemberBinding="{Binding Group}" />
-                    <GridViewColumn Header="SubGroup" Width="60"  DisplayMemberBinding="{Binding SubGroup}" />
-                    <GridViewColumn Header="Price" Width="50" DisplayMemberBinding="{Binding Price}" />
-                    <GridViewColumn Header="Day" Width="50" DisplayMemberBinding="{Binding Day}" />
-                    <GridViewColumn Header="Week" Width="50" DisplayMemberBinding="{Binding Week}" />
-                    <GridViewColumn Header="Month" Width="50" DisplayMemberBinding="{Binding Month}" />
-                    <GridViewColumn Header="Year" Width="70" DisplayMemberBinding="{Binding Year}" />
+                    <GridViewColumn Header="Group" Width="60"  DisplayMemberBinding="{Binding GroupName}" />
+                    <GridViewColumn Header="SubGroup" Width="60"  DisplayMemberBinding="{Binding SubGroupName}" />
+                    <GridViewColumn Header="Price" Width="50" DisplayMemberBinding="{Binding TotalSubGroupPrice}" />
+                    <GridViewColumn Header="Day" Width="50" DisplayMemberBinding="{Binding DayPrice}" />
+                    <GridViewColumn Header="Week" Width="50" DisplayMemberBinding="{Binding WeekPrice}" />
+                    <GridViewColumn Header="Month" Width="50" DisplayMemberBinding="{Binding MonthPrice}" />
+                    <GridViewColumn Header="Year" Width="70" DisplayMemberBinding="{Binding YearPrice}" />
                     <GridViewColumn Header="Edit" Width="75">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
@@ -31,17 +31,9 @@
                     <!--<Button Content="Back" Click="Back_Click"Height="100" Width="75"/>-->
 
                 </GridView>
-            </ListView.View>
-            <Button x:Name="Delete" Click="EditGroup_Click" Height="100" Width="75" BorderBrush="Black"/>
-            <Button x:Name="Edit" Click="EditGroup_Click" Height="100" Width="75" BorderBrush="Black"/>
-            <Button x:Name="button2" Content="EditGroup_Click" Height="100" Width="75" BorderBrush="Black"/>
-            <Button x:Name="button3" Content="EditGroup_Click" Height="100" Width="75" BorderBrush="Black"/>
-            <Button x:Name="butto4" Content="EditGroup_Click" Height="100" Width="75" BorderBrush="Black"/>
-            <Button x:Name="button5" Content="EditGroup_Click" Height="100" Width="75" BorderBrush="Black"/>
-            <Button x:Name="backButton" Content="Back_Click" Height="100" Width="75" BorderBrush="Black"/>
+            </ListView.View>          
         </ListView>
         <Button x:Name="Back" Content="Back" Click="Back_Click" HorizontalAlignment="Left" BorderBrush="Black" Margin="20,281,0,0" VerticalAlignment="Top" Width="87" RenderTransformOrigin="-0.84,-0.4" Height="28"/>
-        <Button x:Name="AddGroup" Content="Add Group" HorizontalAlignment="Left" BorderBrush="Black" Margin="279,281,0,0" VerticalAlignment="Top" Width="87" Height="28" Click="Add_Group_Click"/>
         <Button x:Name="button" Content="Export Group" HorizontalAlignment="Left" BorderBrush="Black" Margin="389,281,0,0" VerticalAlignment="Top" Width="87" Height="28" Click="ExportGroup_Click"/>
 
     </Grid>

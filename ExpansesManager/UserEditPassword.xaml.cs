@@ -56,8 +56,9 @@ namespace ExpansesManager
 		private void CancelButton_Click(object sender, RoutedEventArgs e)
 		{
             MainApp mainApp = new MainApp();
-			App.Current.MainWindow.Close();
             mainApp.ShowDialog();
-		}
-	}
+            App.Current.MainWindow.Close();
+
+        }
+    }
 }
